@@ -1,0 +1,518 @@
+:root {
+  /* Paleta mais japonesa */
+  --paper: #f4f1ea;   /* papel washi */
+  --ink: #171717;     /* tinta sumi */
+  --red: #c0362c;     /* vermelho torii */
+  --line: rgba(192, 54, 44, 0.35); /* vermelho torii muito suave */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Serif JP", "Noto Sans JP", "Hiragino Mincho ProN",
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px) 0 0 / 22px 22px repeat,
+    linear-gradient(180deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px) 0 0 / 26px 26px repeat,
+    var(--paper);
+  color: var(--ink);
+  line-height: 1.9;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============ LAYOUT ============ */
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+}
+
+/* LATERAL */
+
+.side {
+  border-right: 1px solid var(--line);
+  padding: 1.5rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.side-title {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 0.35em;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.side-stamp {
+  border: 1px solid var(--red);
+  color: var(--red);
+  padding: 0.5rem 0.35rem;
+  font-size: 0.76rem;
+  writing-mode: vertical-rl;
+  letter-spacing: 0.25em;
+  border-radius: 4px;
+  background: rgba(192, 54, 44, 0.05);
+  box-shadow: 0 0 0 1px rgba(192, 54, 44, 0.15) inset;
+}
+
+/* CONTEÚDO */
+
+.main {
+  padding: 1.8rem 1.8rem 2.4rem;
+}
+
+/* HEADER */
+
+header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1.3rem;
+  margin-bottom: 1.6rem;
+}
+
+.header-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.heading-block {
+  max-width: 520px;
+}
+
+.heading-kana {
+  font-size: 0.9rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #7b6c5e;
+  margin-bottom: 0.4rem;
+}
+
+.heading-main {
+  font-family: "Noto Serif JP", serif;
+  font-size: 2.1rem;
+  letter-spacing: 0.22em;
+}
+
+.heading-sub {
+  font-size: 0.95rem;
+  margin-top: 0.6rem;
+  color: #5e5245;
+}
+
+/* THUMBNAIL */
+
+.hero-thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #6c6157;
+}
+
+.thumb-wrap {
+  width: 90px;
+  height: 90px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fffdf8;
+}
+
+.thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb-caption {
+  text-align: center;
+}
+
+/* NAV */
+
+nav {
+  font-size: 0.84rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  display: flex;
+  gap: 1.1rem;
+  margin-top: 0.3rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  padding-bottom: 0.12rem;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--red);
+  transition: width 0.18s ease-out;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* SECÇÕES */
+
+.section {
+  padding: 1.3rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.section-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #7a6e61;
+  margin-bottom: 0.4rem;
+}
+
+h2 {
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.6rem;
+}
+
+p {
+  font-size: 0.98rem;
+  margin-bottom: 0.7rem;
+}
+
+.two-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.3rem;
+}
+
+.quote {
+  border-left: 2px solid var(--red);
+  padding-left: 0.9rem;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+/* FOOTER */
+
+footer {
+  font-size: 0.78rem;
+  color: #7b6a4a;
+  margin-top: 2rem;
+  text-align: right;
+}
+
+/* ============== RESPONSIVO ============== */
+
+@media (max-width: 780px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .side {
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 0.8rem 1.2rem;
+  }
+
+  .side-title,
+  .side-stamp {
+    writing-mode: horizontal-tb;
+  }
+
+  .main {
+    padding: 1.3rem 1.3rem 2.4rem;
+  }
+
+  .header-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ============================================
+      ESTILO JAPONÊS – CARDS DOS RESTAURANTES
+============================================ */
+
+.grid {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform .12s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* FOTO */
+
+.photo {
+  height: 220px;
+  background: #fffdf8;
+  border-bottom: 1px solid var(--line);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+/* CONTEÚDO */
+
+.content {
+  padding: 1.2rem 1.4rem 1.5rem;
+}
+
+.content h2 {
+  font-size: 1.25rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 0.4rem;
+}
+
+.rating {
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  color: var(--red);
+  margin-bottom: 0.3rem;
+}
+
+.tag {
+  font-size: 0.85rem;
+  color: var(--red);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.15em;
+}
+
+.content p {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+/* ICON ROW */
+
+.icon-row {
+  display: flex;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+/* PIN */
+
+.address-pin {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: #fffdf7;
+  transition: 0.2s ease;
+}
+
+.address-pin:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.pin-icon {
+  width: 15px;
+  height: 15px;
+}
+
+/* WEBSITE ICON */
+
+.web-icon {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #fffdf7;
+  transition: 0.2s ease;
+}
+
+.web-icon:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.site-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* INSTAGRAM */
+
+.insta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fffdf9;
+  transition: 0.2s ease;
+}
+
+.insta:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.insta-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* POPUP */
+
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+  z-index: 9999;
+}
+
+.popup.active {
+  display: flex;
+}
+
+.popup-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.popup-img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.25);
+  animation: popIn 0.25s ease-out;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.icon-row a svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.icon-row a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+}
+
+
+/* POPUP DO CARTÃO */
+#card-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+  z-index: 9999;
+}
+
+#card-popup.active {
+  display: flex;
+}
+
+.popup-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.popup-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.3rem;
+  max-width: 540px;
+  width: 100%;
+  box-shadow: 0 4px 22px rgba(0,0,0,0.25);
+  animation: popIn .25s ease-out;
+  overflow: hidden;
+}
+
+/* IMAGEM COMPLETA NO POPUP */
+#card-popup .popup-card .photo {
+  height: auto;
+  max-height: 70vh;     /* não ultrapassa o ecrã */
+  overflow: hidden;
+  background: var(--paper);
+}
+
+#card-popup .popup-card .photo img {
+  width: 100%;
+  height: auto;         /* mantém proporção */
+  object-fit: contain;  /* mostra a imagem inteira */
+  display: block;
+}
+
+
+/* SCROLL APENAS PARA O CONTEÚDO EXTRA DO POPUP */
+.popup-card .card-extra {
+  max-height: 60vh;     /* altura máxima da zona extra */
+  overflow-y: auto;      /* scroll só aqui */
+  padding-right: 0.4rem; /* espaço para evitar corte no scroll */
+}
