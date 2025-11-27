@@ -5,10 +5,12 @@
   <title>Japão — Viagem</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
+
+ <script src="script.js"></script>
+ 
 </head>
 
 <body>
-
 <div class="page">
 
   <!-- LATERAL JAPOESA -->
@@ -42,14 +44,14 @@
         </section>
       </div>
 
-    <!-- MENU GLOBAL / NAVEGAÇÃO SUPERIOR -->
-<nav class="global-menu">
-  <a href="index.html">🏠 Home</a>
-  <a href="restaurantes.html">🍜 Restaurantes</a>
-  <a href="osaka.html">🗾 Osaka</a>
-  <a href="teshima.html">🎨 Teshima & Naoshima</a>
-  <a href="tokyo.html">🌆 Tokyo</a>
-  <a href="nagano.html">🏔️ Nagano</a>
+<nav class="global-menu jp-menu">
+  <a href="index.html?token=abc123">Home</a>
+  <a href="restaurante.html?token=abc123">Restaurantes</a>
+  <a href="osaka.html?token=abc123">Osaka</a>
+  <a href="teshima.html?token=abc123">Teshima</a>
+  <a href="tokyo.html?token=abc123">Tokyo</a>
+  <a href="nagano.html?token=abc123">Nagano</a>
+  <a href="geral.html?token=abc123">Dicas</a>
 </nav>
 
     </header>
@@ -63,12 +65,10 @@
       <div class="two-cols" style="margin-top: 1.2rem; gap: 1.8rem;">
 
         <!-- CARD 1 – RESTAURANTES -->
-        <a href="restaurante.html" class="nav-card">
+        <a href="restaurante.html?token=abc123" class="nav-card">
           <div class="nav-card-inner">
 
-            <div class="nav-img">
-              <img src="food-thumb.jpg" alt="Restaurantes">
-            </div>
+            
 
             <div class="nav-content">
               <h3>Restaurantes</h3>
@@ -81,12 +81,8 @@
         </a>
 
         <!-- CARD 2 – OSAKA -->
-        <a href="osaka.html" class="nav-card">
-          <div class="nav-card-inner">
-
-            <div class="nav-img">
-              <img src="osaka-thumb.jpg" alt="Osaka">
-            </div>
+        <a href="osaka.html?token=abc123" class="nav-card">
+          <div class="nav-card-inner">           
 
             <div class="nav-content">
               <h3>Osaka</h3>
@@ -100,12 +96,8 @@
         </a>
 
         <!-- CARD 3 – TESHIMA / NAOSHIMA -->
-        <a href="teshima.html" class="nav-card">
+        <a href="teshima.html?token=abc123" class="nav-card">
           <div class="nav-card-inner">
-
-            <div class="nav-img">
-              <img src="islands-thumb.jpg" alt="Teshima e Naoshima">
-            </div>
 
             <div class="nav-content">
               <h3>Teshima & Naoshima</h3>
@@ -119,12 +111,8 @@
         </a>
 
         <!-- CARD 4 – TOKYO -->
-        <a href="tokyo.html" class="nav-card">
+        <a href="tokyo.html?token=abc123" class="nav-card">
           <div class="nav-card-inner">
-
-            <div class="nav-img">
-              <img src="tokyo-thumb.jpg" alt="Tokyo">
-            </div>
 
             <div class="nav-content">
               <h3>Tokyo</h3>
@@ -137,12 +125,8 @@
         </a>
 
         <!-- CARD 5 – NAGANO -->
-        <a href="nagano.html" class="nav-card">
+        <a href="nagano.html?token=abc123" class="nav-card">
           <div class="nav-card-inner">
-
-            <div class="nav-img">
-              <img src="nagano-thumb.jpg" alt="Nagano">
-            </div>
 
             <div class="nav-content">
               <h3>Nagano</h3>
@@ -155,12 +139,8 @@
         </a>
 
         <!-- CARD 6 – GERAL / ÚLTIMA SEMANA -->
-        <a href="geral.html" class="nav-card">
+        <a href="geral.html?token=abc123" class="nav-card">
           <div class="nav-card-inner">
-
-            <div class="nav-img">
-              <img src="geral-thumb.jpg" alt="Geral da Viagem">
-            </div>
 
             <div class="nav-content">
               <h3>Geral</h3>
@@ -181,6 +161,5 @@
   </main>
 
 </div>
-
 </body>
 </html>

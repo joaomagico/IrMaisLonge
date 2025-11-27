@@ -516,3 +516,84 @@ footer {
   overflow-y: auto;      /* scroll só aqui */
   padding-right: 0.4rem; /* espaço para evitar corte no scroll */
 }
+
+
+/* MENU GLOBAL — estilo japonês premium */
+.global-menu.jp-menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2.2rem;
+  padding: 0.9rem 0 1.1rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.8rem;
+
+  font-size: 0.85rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Links */
+.global-menu.jp-menu a {
+  color: var(--ink);
+  padding-bottom: 0.15rem;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+/* Linha torii animada */
+.global-menu.jp-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--red);
+  transition: width 0.22s ease-out;
+}
+
+.global-menu.jp-menu a:hover::after {
+  width: 100%;
+}
+
+.global-menu.jp-menu a:hover {
+  color: var(--red);
+}
+
+/* MOBILE */
+@media (max-width: 780px) {
+  .global-menu.jp-menu {
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    font-size: 0.78rem;
+  }
+}
+
+
+.jp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.jp-table th {
+  background: rgba(192, 54, 44, 0.1);
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.jp-table td {
+  padding: 0.55rem 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.jp-table tr:hover {
+  background: rgba(192, 54, 44, 0.06);
+}
