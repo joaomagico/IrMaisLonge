@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const TOKEN_VALIDO = "abc123";
+  const TOKEN_VALIDO = "irmaislonge2025";
   //const TOKEN_VALIDO = "Q15qxgcvQImhc1uDYwUIycyK5L3D01AW5cihRTzr3ViTxuVVWv8F13soryEYcYHV";
   const params = new URLSearchParams(window.location.search);
   const token = params.get("token");
